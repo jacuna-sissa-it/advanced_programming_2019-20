@@ -13,6 +13,7 @@ int main() {
   af[8] = 3.3;  // last element
   ai[88] = 7;   // undefined behavior, no range checking
 
+  // long long unsigned int <--> std:size_t
   for (std::size_t k{0}; k < 4; ++k)
     std::cout << "ai[" << k << "] = " << ai[k] << '\n';
 

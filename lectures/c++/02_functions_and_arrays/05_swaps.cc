@@ -41,16 +41,20 @@ void buggy_swap(int a, int b) {
   a = tmp;
 }
 
-void c_swap(int* a, int* b) {
-  int tmp{*b};
-  *b = *a;
-  *a = tmp;
+void c_swap(int* a, int* b) { //pointer
+  //  int tmp{*b};
+  *b = *a + *b;
+  *a = *b - *a;
+  *b = *b - *a;  
+  //  *a = tmp;
 }
 
-void cxx_swap(int& a, int& b) {
-  int tmp{b};
-  b = a;
-  a = tmp;
+void cxx_swap(int& a, int& b) { //pass by reference; analogous to subroutines in fortran
+  //  int tmp{b};
+  b = a + b;
+  a = b - a;
+  b = b - a;
+  //  a = tmp;
 }
 
 template <typename T>
